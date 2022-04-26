@@ -402,6 +402,11 @@
               <FileType>1</FileType>
               <FilePath>.\air_quality.c</FilePath>
             </File>
+            <File>
+              <FileName>beep.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\beep.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -426,16 +431,6 @@
               <FileName>DHT11.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\DHT11\DHT11.c</FilePath>
-            </File>
-            <File>
-              <FileName>ADC.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HARDWARE\ADC\ADC.c</FilePath>
-            </File>
-            <File>
-              <FileName>TiM.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HARDWARE\TiM.c</FilePath>
             </File>
           </Files>
         </Group>

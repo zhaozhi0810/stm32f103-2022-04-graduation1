@@ -90,10 +90,10 @@ void systick_int_update(void)
 	}
 	
 	
-//	if(g_localtime % TASK5_TICKS_INTERVAL == 0)
-//	{
-//		task_id |= (1<<4);   //任务5，500ms扫描，定时汇报温度等任务
-//	}
+	if(g_localtime % TASK6_TICKS_INTERVAL == 7)
+	{
+		task_id |= (1<<5);   //任务6，蜂鸣器控制任务
+	}
 			
 		
 	

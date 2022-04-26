@@ -14,6 +14,9 @@
 
 #include "task_cfg.h"
 #include "air_quality.h"
+#include "beep.h"
+
+
 
 void dht11_show(uint8_t tem,uint8_t humi); //oled显示
 extern __IO uint8_t TEMP_REQ;
@@ -51,6 +54,10 @@ int boardInit(void)
 	//6. OLED的初始化
 	OLED_Init();
 	
+	
+	//7. 风扇控制
+	TIM4_PWM_Init();
+	
 	//6. 初始化I2C1 温度采集
 //	vol_temp_init();
 	
@@ -69,9 +76,9 @@ int main(void)
 	const task_t task[TASK_MAX]={task_get_temp_vol  //任务1，采集温湿度 2s采集一次
 								,0
 								,0
-								,task_oled_show
+								,task_oled_show		//任务4，oled显示刷新
 								,ADCget_Air_Vol     //任务5，用于空气质量采集
-								,0       //任务6，采集温湿度 2s采集一次
+								,task_beep_control      //任务6，蜂鸣器的控制 10ms检测一次
 					
 	};
 	

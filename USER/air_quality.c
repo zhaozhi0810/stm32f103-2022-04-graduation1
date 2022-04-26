@@ -81,7 +81,8 @@ static u16 getAdcAverage(u8 ch,u8 times)
 void ADCget_Air_Vol(void)
 {	
 	g_air_quality_val = getAdcAverage(ADC_Channel_14,3) >> 2;   //ppm ·¶Î§10-1000ppm
-	
+	if(g_air_quality_val>999)
+		g_air_quality_val = 999;   //·ÀÖ¹ÖµÌ«´óÁË¡£
 	printf("g_air_quality_val = %d\n\r",g_air_quality_val);
 }
 
